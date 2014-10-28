@@ -1,0 +1,32 @@
+<div class='new_item_form_div'>
+  <%= form_for(Item.new, remote: :true) do |f| %>
+    <div class='user_input'>
+      <%= f.label :category, 'type' %><br>
+      <%= f.select :category, ['beer', 'wine', 'liquor'] %><br>
+    </div>
+
+    <div class='user_input'>
+      <%= f.label :quantity, '# of bottles' %><br>
+      <%= f.number_field :quantity, :placeholder => '6' %><br>
+    </div>
+
+    <div class='user_input'>
+      <%= f.label :volume, 'volume' %><br>
+      <%= f.number_field :volume, :placeholder => '12' %><br>
+    </div>
+
+    <div class='user_input'>
+      <%= f.label :volume_type, 'oz / ml' %><br>
+      <%= f.select :volume_type, ['oz', 'ml'] %><br>
+    </div>
+
+    <div class='user_input'>
+      <%= f.label :price, 'price' %><br>
+      <%= f.number_field :price, :placeholder => '0.00' %><br>
+    </div>
+
+    <div class='user_input submit'>
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

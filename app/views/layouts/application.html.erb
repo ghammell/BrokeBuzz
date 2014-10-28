@@ -4,6 +4,7 @@
   <title>BrokeBuzz</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,37 +13,9 @@
     <h1>BrokeBuzz</h1>
   </header>
 
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-
+  <div id='main'>
+    <%= render :partial => 'items/option' %>
+  </div>
 
 <%= yield %>
 

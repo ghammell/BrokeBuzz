@@ -1,0 +1,37 @@
+#main {
+  width: 80%;
+  min-width: 960px;
+  margin: 10px auto;
+
+  .new_item_form_div{
+    color: white;
+    border-radius: 2px;
+    font-size: 12px;
+    padding: 5px 0px;
+    background-color: #19680C;
+  }
+
+  .user_input {
+    width: 90%;
+    margin: 5px auto;
+  }
+
+  form {
+    select, input {
+      width: 90%;
+    }
+
+    .submit {
+      margin-top: 10px;
+    }
+  }
+
+  .option {
+    color: #052101;
+    background-color: white;
+    box-shadow: 2px 2px 5px black;
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+  }
+}
