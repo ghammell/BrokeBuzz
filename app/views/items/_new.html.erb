@@ -1,7 +1,7 @@
 <div class='new_item_form_div'>
   <%= form_for(Item.new, remote: :true) do |f| %>
     <div class='user_input'>
-      <%= f.label :category, 'type' %><br>
+      <%= f.label :category, 'type of booze' %><br>
       <%= f.select :category, ['beer', 'wine', 'liquor'] %><br>
     </div>
 
@@ -16,7 +16,7 @@
     </div>
 
     <div class='user_input'>
-      <%= f.label :volume_type, 'oz / ml per bottle' %><br>
+      <%= f.label :volume_type, 'in oz or ml' %><br>
       <%= f.select :volume_type, ['oz', 'ml'] %><br>
     </div>
 
