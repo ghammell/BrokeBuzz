@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20141023094955) do
     t.string   "volume_type"
     t.float    "price"
     t.integer  "quantity"
+    t.float    "abv"
+    t.float    "oz_of_alc"
+    t.float    "price_per_oz"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

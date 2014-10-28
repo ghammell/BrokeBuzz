@@ -21,6 +21,11 @@
     </div>
 
     <div class='user_input'>
+      <%= f.label :abv, 'abv %' %><br>
+      <%= f.number_field :abv %><br>
+    </div>
+
+    <div class='user_input'>
       <%= f.label :price, 'total price' %><br>
       <%= f.number_field :price, :step => 'any', :placeholder => '0.00' %><br>
     </div>
