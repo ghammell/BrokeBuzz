@@ -12,6 +12,15 @@ class ItemsController < ApplicationController
   def new
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  private
   def item_params
     params.require(:item).permit(:category, :volume, :volume_type, :price, :quantity)
   end
