@@ -1,0 +1,5 @@
+<div class='item'>
+  <span><%= pluralize(@item.quantity, 'bottle') %> of <%= @item.category %></span>
+  <span>for <%= number_to_currency(@item.price) %>, </span><br>
+  <span><%= "#{@item.volume} #{@item.volume_type}" %> each
+</div>
