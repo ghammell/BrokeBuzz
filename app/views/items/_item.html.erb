@@ -1,5 +1,5 @@
 <div class='item'>
   <span><%= pluralize(@item.quantity, 'bottle') %> of <%= @item.category %></span>
   <span>for <%= number_to_currency(@item.price) %> </span><br>
-  <span>@ <%=pluralize(@item.volume, @item.volume_type) %> each </span>
+  <span>@ <%=pluralize(number_with_precision(@item.volume, :precision => 2, :delimiter => ','), @item.volume_type) %> each </span>
 </div>
