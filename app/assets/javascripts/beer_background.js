@@ -28,10 +28,9 @@ var bindScroll = function(object, direction) {
   $(window).scroll(function(event){
     var currentTop = $(this).scrollTop();
     position = $(object).css(direction).replace('px','')
-    movement = Math.floor(Math.random() * 10 + 2)
+    movement = Math.floor($(object).height() / 25 + 2)
     if (currentTop > lastScrollTop){
       $(object).css(direction, parseInt(position) - movement + 'px')
-      console.log('moving down')
     } else {
       $(object).css(direction, parseInt(position) + movement + 'px')
     }
