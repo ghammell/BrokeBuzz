@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  // headerScrollEnabler('#header', 3)
   var lastScrollTop = 0;
   $(window).scroll(function(event){
     var currentTop = $(this).scrollTop();
@@ -12,10 +11,3 @@ $(document).ready(function(){
      lastScrollTop = currentTop;
   });
 })
-
-// var headerScrollEnabler = function(element, change) {
-//   window.onscroll = function(){
-//     position = $(element).css('background-position-y').replace('px','')
-//     $(element).css('background-position-y', parseInt(position) - change + 'px')
-//   }
-// }
