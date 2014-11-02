@@ -37,4 +37,3 @@ var bindScroll = function(object, direction) {
     lastScrollTop = currentTop;
   });
 }
-
