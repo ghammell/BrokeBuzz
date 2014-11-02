@@ -17,8 +17,7 @@
   <%= render :partial => 'layouts/beer_background' %>
 
   <div id='main'>
-    <button id='add_option_button'>Add Option</button>
-    <%= render :partial => 'items/option' %>
+    <%= button_to 'Get Started!', new_option_path, :id => 'add_option_button', :remote => true, method: :get %>
   </div>
 
 <%= yield %>
