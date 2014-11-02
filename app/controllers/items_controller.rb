@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def create
-    @item = Item.new(item_params)
+    @option = Option.find(params[:option_id])
+    @item = @option.items.new(item_params)
     unless @item.save
       p @item.errors
     end

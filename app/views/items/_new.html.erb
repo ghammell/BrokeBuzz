@@ -1,5 +1,5 @@
 <div class='new_item_form_div'>
-  <%= form_for(Item.new, remote: :true) do |f| %>
+  <%= form_for([@option, Item.new], remote: :true) do |f| %>
     <div class='user_input'>
       <%= f.label :category, 'type of booze' %><br>
       <%= f.select :category, ['beer', 'wine', 'liquor'] %><br>
