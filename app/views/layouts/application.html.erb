@@ -18,6 +18,8 @@
 
   <div id='main'>
     <%= button_to 'Get Started!', new_option_path, :id => 'add_option_button', :remote => true, method: :get %>
+    <div id='options_div'>
+    </div>
   </div>
 
 <%= yield %>

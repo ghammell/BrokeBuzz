@@ -2,6 +2,7 @@
   width: 80%;
   min-width: 960px;
   margin: 10px auto;
+  text-align: center;
 
   .new_item_form_div{
     color: white;
@@ -28,33 +29,42 @@
   }
 
   #add_option_button {
-    width: 100%;
+    width: 20%;
     border: none;
     margin: 5px auto;
   }
 
-  .option {
-    color: #052101;
-    background-color: white;
-    box-shadow: 2px 2px 5px black;
-    width: 20%;
-    padding: 10px;
+  #options_div{
     text-align: center;
     margin: 0 auto;
+    .option {
+      color: #052101;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 2px 2px 5px black;
+      width: 20%;
+      padding: 1%;
+      text-align: center;
+      margin: 1% ;
+      /*display: inline-table;*/
+      float: left;
+      width: 90%;
+      display: none;
+      transition: all 0.2s;
 
-    .items {
-      .item {
-        background: #E6EAE6;
-        padding: 5px;
-        margin: 5px auto;
-        display: none;
+      .items {
+        .item {
+          background: #E6EAE6;
+          padding: 5px;
+          margin: 5px auto;
+          display: none;
+        }
       }
-    }
 
-    #add_item_button {
-      width: 100%;
-      border: none;
-      margin: 5px auto;
+      #add_item_button {
+        width: 100%;
+        border: none;
+        margin: 5px auto;
+      }
     }
   }
 }

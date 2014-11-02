@@ -1,1 +1,18 @@
-$('#main').append("<%= escape_javascript(render @option) %> ")
+$('#options_div').append("<%= escape_javascript(render @option) %> ")
+
+var updateOptionWidths = function(selector, limit) {
+  var numOfOptions = $(selector).length
+  console.log(numOfOptions)
+  if (numOfOptions < limit) {
+    var computedWidth = Math.floor(90 / numOfOptions - 10)
+    console.log("less")
+  } else {
+    var computedWidth = Math.floor( 90 / limit - 10)
+    console.log("greater")
+  }
+
+  $(selector).css('width', computedWidth + '%')
+}
+
+updateOptionWidths('.option', 3)
+$('#<%= dom_id(@option) %>').fadeIn()
