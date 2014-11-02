@@ -1,2 +1,2 @@
-$('.items').append("<%= escape_javascript(render @item) %> ")
+$('#<%= dom_id(@item.option) %> .items').append("<%= escape_javascript(render @item) %> ")
 $('#<%= dom_id(@item) %>').fadeIn()
