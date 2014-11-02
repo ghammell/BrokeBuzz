@@ -1,0 +1,8 @@
+<%= div_for @option do %>
+  <h1>Option <%= @option.id %> </h1>
+  <div class='items'>
+  </div>
+  <button id='add_item_button'>Add Items</button>
+  <%= render :partial => 'items/new'%>
+<% end %>
+
