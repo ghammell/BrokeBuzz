@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root 'static#home'
-  resources :items
+  resources :options do
+    resources :items
+  end
 end

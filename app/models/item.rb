@@ -1,6 +1,7 @@
 class Item < ActiveRecord::Base
   before_save :convert_abv
   before_save :calc_price_per_oz
+  belongs_to :option
 
 
   def convert_abv

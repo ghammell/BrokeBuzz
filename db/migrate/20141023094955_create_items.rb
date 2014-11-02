@@ -9,6 +9,7 @@ class CreateItems < ActiveRecord::Migration
       t.float :abv
       t.float :oz_of_alc
       t.float :price_per_oz
+      t.belongs_to :option
 
       t.timestamps
     end
