@@ -9,7 +9,9 @@ var updateOptionResult = function() {
 }
 
 var updateOptionWinner = function() {
-
+  $('.option_winner').removeClass('option_winner')
+  $('#<%= dom_id(@option_winner) %>').addClass('option_winner')
 }
 
 updateOptionResult()
+updateOptionWinner()
