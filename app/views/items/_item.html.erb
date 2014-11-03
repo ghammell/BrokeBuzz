@@ -1,5 +1,7 @@
 <%= div_for @item do %>
-  <%= link_to 'x', [@option, @item], method: :delete, remote: :true, :class => 'item_delete' %>
+  <div class='item_delete'>
+    <%= link_to 'x', [@option, @item], method: :delete, remote: :true %>
+  </div>
   <div class="info">
     <span><%= pluralize(@item.quantity, 'bottle') %> of <%= @item.category %></span>
     <span>for <%= number_to_currency(@item.price) %> </span><br>

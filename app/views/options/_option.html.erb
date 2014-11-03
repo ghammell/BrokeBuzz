@@ -1,5 +1,7 @@
 <%= div_for @option do %>
-  <%= link_to 'x', @option, method: :delete,   remote: :true , :class => 'option_delete'%>
+  <div class='option_delete'>
+    <%= link_to 'x', @option, method: :delete,   remote: :true %>
+  </div>
   <h1>Option <%= @option.id %> </h1>
   <div class='items'>
   </div>
