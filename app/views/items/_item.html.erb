@@ -1,11 +1,13 @@
 <%= div_for @item do %>
+  <%= link_to 'x', [@option, @item], method: :delete, remote: :true, :class => 'item_delete' %>
   <div class="info">
     <span><%= pluralize(@item.quantity, 'bottle') %> of <%= @item.category %></span>
     <span>for <%= number_to_currency(@item.price) %> </span><br>
-    <span>@ <%=pluralize(number_with_precision(@item.volume, :precision => 2, :delimiter => ','), @item.volume_type) %> each </span>
-    <%= link_to 'x', [@option, @item], method: :delete, remote: :true %>
+    <span>(<%=pluralize(number_with_precision(@item.volume, :precision => 2, :delimiter => ','), @item.volume_type) %> each, </span>
+    <span> <%= @item.abv * 100 %>% abv)</span>
   </div>
   <div class="result">
-    <h1>hello!</h1>
+    <h1><%= number_to_currency(@item.price_per_oz) %></h1>
+    <span>per pure oz of booze!</span>
   </div>
 <% end %>

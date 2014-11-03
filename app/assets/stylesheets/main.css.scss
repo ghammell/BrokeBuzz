@@ -57,12 +57,17 @@
           margin: 5px auto;
           display: none;
           overflow: auto;
+
+          .item_delete {
+            float: left;
+          }
         }
 
         .info {
-          width: 60%;
+          /*width: 60%;*/
           display: table-cell;
           vertical-align: middle;
+          margin: 5px;
         }
 
         .result {
@@ -70,6 +75,12 @@
           /*width: 30%;*/
           background-color: green;
           overflow: auto;
+          padding: 10px ;
+          margin: 5px;
+
+          h1 {
+            margin: 0;
+          }
         }
       }
 
