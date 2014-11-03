@@ -1,1 +1,3 @@
-$('#<%= dom_id(@item) %>').slideUp()
+$('#<%= dom_id(@item) %>').fadeOut( function(){
+  $(this).remove()
+})
