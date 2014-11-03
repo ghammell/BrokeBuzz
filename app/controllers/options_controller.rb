@@ -1,5 +1,5 @@
 class OptionsController < ApplicationController
-  def new
+  def create
     @option = Option.create
   end
 
