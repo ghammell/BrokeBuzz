@@ -5,9 +5,8 @@ class ItemsController < ApplicationController
     unless @item.save
       p @item.errors
     end
-    respond_to do |format|
-      format.js
-    end
+    @options = session[:options].map { |option_id| Option.find(option_id) }
+    @option_winner = @options.min_by {|option| option.price_per_oz}
   end
 
   def new
