@@ -7,12 +7,12 @@
 
     <div class='user_input'>
       <%= f.label :quantity, '# of bottles' %><br>
-      <%= f.number_field :quantity, :placeholder => '6' %><br>
+      <%= f.number_field :quantity, :placeholder => '6', :value => 12 %><br>
     </div>
 
     <div class='user_input'>
       <%= f.label :volume, 'volume per bottle' %><br>
-      <%= f.number_field :volume, :step => 'any', :placeholder => '12' %><br>
+      <%= f.number_field :volume, :step => 'any', :placeholder => '12', :value => 12 %><br>
     </div>
 
     <div class='user_input'>
@@ -22,12 +22,12 @@
 
     <div class='user_input'>
       <%= f.label :abv, 'abv %' %><br>
-      <%= f.number_field :abv %><br>
+      <%= f.number_field :abv, :value => 12 %><br>
     </div>
 
     <div class='user_input'>
       <%= f.label :price, 'total price' %><br>
-      <%= f.number_field :price, :step => 'any', :placeholder => '0.00' %><br>
+      <%= f.number_field :price, :step => 'any', :placeholder => '0.00', :value => 12 %><br>
     </div>
 
     <div class='user_input submit'>
