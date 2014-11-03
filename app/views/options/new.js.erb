@@ -3,9 +3,9 @@ $('#options_div').append("<%= escape_javascript(render @option) %> ")
 var updateOptionWidths = function(selector, limit) {
   var numOfOptions = $(selector).length
   if (numOfOptions < limit) {
-    var computedWidth = Math.floor(90 / numOfOptions - 10)
+    var computedWidth = Math.floor(100 / numOfOptions - 5)
   } else {
-    var computedWidth = Math.floor( 90 / limit - 10)
+    var computedWidth = Math.floor( 100 / limit - 5)
   }
 
   $(selector).css('width', computedWidth + '%')
