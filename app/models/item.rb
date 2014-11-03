@@ -3,6 +3,7 @@ class Item < ActiveRecord::Base
   before_save :calc_price_per_oz
   belongs_to :option
   after_save :increment_option
+  before_destroy :decrement_option
 
 
   def convert_abv
@@ -26,7 +27,18 @@ class Item < ActiveRecord::Base
     option = self.option
     option.total_price += self.price
     option.total_oz += self.oz_of_alc
-    option.price_per_oz += self.price_per_oz
+    option.price_per_oz = option.total_price / option.total_oz
+    option.save
+  end
+
+  def decrement_option
+    option = self.option
+    option.total_price -= self.price
+    option.total_oz -= self.oz_of_alc
+    option.price_per_oz = option.total_price / option.total_oz
+    if option.price_per_oz.nan?
+      option.price_per_oz = 0
+    end
     option.save
   end
 end

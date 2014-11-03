@@ -1,3 +1,11 @@
 $('#<%= dom_id(@item.option) %> .items').append("<%= escape_javascript(render @item) %> ")
 $('#<%= dom_id(@item) %>').fadeIn()
 $('#<%= dom_id(@item) %>').css('display', 'table')
+
+optionResult = <%= @item.option.price_per_oz %>
+
+var updateOptionResult = function() {
+  $('#<%= dom_id(@item.option) %> .option_result h1').text('$' + optionResult.toFixed(2).toString())
+}
+
+updateOptionResult()
