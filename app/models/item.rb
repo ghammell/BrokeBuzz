@@ -2,6 +2,7 @@ class Item < ActiveRecord::Base
   before_save :convert_abv
   before_save :calc_price_per_oz
   belongs_to :option
+  after_save :increment_option
 
 
   def convert_abv
@@ -19,5 +20,13 @@ class Item < ActiveRecord::Base
 
     self.oz_of_alc = self.abv * volume_in_oz * quantity
     self.price_per_oz = price / self.oz_of_alc
+  end
+
+  def increment_option
+    option = self.option
+    option.total_price += self.price
+    option.total_oz += self.oz_of_alc
+    option.price_per_oz += self.price_per_oz
+    option.save
   end
 end

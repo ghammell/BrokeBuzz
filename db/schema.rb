@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 20141102043659) do
   end
 
   create_table "options", force: true do |t|
+    t.float "total_price",  default: 0.0
+    t.float "total_oz",     default: 0.0
+    t.float "price_per_oz", default: 0.0
   end
 
 end
