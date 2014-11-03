@@ -5,8 +5,7 @@ class ItemsController < ApplicationController
     unless @item.save
       p @item.errors
     end
-    @options = session[:options].map { |option_id| Option.find(option_id) }
-    @option_winner = @options.min_by {|option| option.price_per_oz}
+    determine_option_winner
   end
 
   def new
@@ -15,13 +14,16 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
-    respond_to do |format|
-      format.js
-    end
+    determine_option_winner
   end
 
   private
   def item_params
     params.require(:item).permit(:category, :volume, :volume_type, :price, :quantity, :abv)
+  end
+
+  def determine_option_winner
+    @options = session[:options].map { |option_id| Option.find(option_id) }
+    @option_winner = @options.min_by {|option| option.price_per_oz}
   end
 end

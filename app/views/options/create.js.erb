@@ -13,3 +13,10 @@ var updateOptionWidths = function(selector, limit) {
 
 updateOptionWidths('.option', 3)
 $('#<%= dom_id(@option) %>').fadeIn()
+
+var updateOptionWinner = function() {
+  $('.option_winner').removeClass('option_winner')
+  $('#<%= dom_id(@option_winner) %>').addClass('option_winner')
+}
+
+updateOptionWinner()

@@ -4,9 +4,14 @@ $('#<%= dom_id(@item) %>').fadeOut( function(){
 
 optionResult = <%= @item.option.price_per_oz %>
 
-
 var updateOptionResult = function() {
   $('#<%= dom_id(@item.option) %> .option_result h1').text('$' + optionResult.toFixed(2).toString())
 }
 
+var updateOptionWinner = function() {
+  $('.option_winner').removeClass('option_winner')
+  $('#<%= dom_id(@option_winner) %>').addClass('option_winner')
+}
+
 updateOptionResult()
+updateOptionWinner()
