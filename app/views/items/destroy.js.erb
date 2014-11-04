@@ -1,8 +1,8 @@
+<%= render 'update_option' %>
+
 $('#<%= dom_id(@item) %>').fadeOut( function(){
   $(this).remove()
 })
-
-<%= render 'update_option' %>
 
 updateOptionResult()
 updateOptionWinner()

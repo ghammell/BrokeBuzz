@@ -1,8 +1,8 @@
+<%= render 'update_option' %>
+
 $('#<%= dom_id(@item.option) %> .items').append("<%= escape_javascript(render @item) %> ")
 $('#<%= dom_id(@item) %>').fadeIn()
 $('#<%= dom_id(@item) %>').css('display', 'table')
-
-<%= render 'update_option' %>
 
 updateOptionResult()
 updateOptionWinner()
