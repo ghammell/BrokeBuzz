@@ -1,4 +1,5 @@
 <%= render 'items/update_option' %>
+<%= render 'update_option_num' %>
 
 $('#options_div').append("<%= escape_javascript(render @option) %> ")
 
@@ -16,4 +17,5 @@ var updateOptionWidths = function(selector, limit) {
 updateOptionWidths('.option', 3)
 $('#<%= dom_id(@option) %>').fadeIn()
 
+updateOptionNumber()
 updateOptionWinner()

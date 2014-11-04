@@ -1,4 +1,5 @@
 <%= render 'items/update_option' %>
+<%= render 'update_option_num' %>
 
 $('#<%= dom_id(@option) %>').fadeOut( function(){
   $(this).remove()
@@ -6,3 +7,5 @@ $('#<%= dom_id(@option) %>').fadeOut( function(){
 })
 
 updateOptionWinner()
+updateOptionNumber()
+
