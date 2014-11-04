@@ -1,10 +1,10 @@
 var changeOptionResultText = function(x) {
-  $('#<%= dom_id(@item.option) %> .option_result h1').text('$' + x.toString())
+  $('#<%= dom_id(@option) %> .option_result h1').text('$' + x.toString())
 }
 
 var updateOptionResult = function() {
-  optionResult = (<%= @item.option.price_per_oz %>).toFixed(2)
-  currentResult = $('#<%= dom_id(@item.option) %> .option_result h1').text().replace('$', '')
+  optionResult = (<%= @option.price_per_oz %>).toFixed(2)
+  currentResult = $('#<%= dom_id(@option) %> .option_result h1').text().replace('$', '')
   currentResult = parseFloat(currentResult)
   changeOptionResultText(optionResult)
 
