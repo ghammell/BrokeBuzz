@@ -10,13 +10,12 @@ class OptionsController < ApplicationController
 
     if session[:options].length == 1
       determine_option_winner
-      @option.destroy
       session[:options].delete(@option.id)
     else
       session[:options].delete(@option.id)
-      @option.destroy
       determine_option_winner
     end
+    @option.destroy
   end
 
   private
