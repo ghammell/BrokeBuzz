@@ -51,8 +51,10 @@
 
     .option_result {
       h1 {
+        margin-bottom: 5px;
         color: black;
         transition: color 0.5s;
+        border: 1px solid #F9FAF9;
       }
     }
 
@@ -67,6 +69,10 @@
       float: left;
       display: none;
       transition: width 0.2s;
+
+      .option_number {
+        margin: 0;
+      }
 
       .option_delete {
         float: left;
