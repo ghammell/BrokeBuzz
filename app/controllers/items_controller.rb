@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
+    @option = @item.option
     @item.destroy
     determine_option_winner
   end
