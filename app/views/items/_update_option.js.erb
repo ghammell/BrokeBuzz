@@ -1,0 +1,31 @@
+var changeOptionResultText = function(x) {
+  $('#<%= dom_id(@item.option) %> .option_result h1').text('$' + x.toString())
+}
+
+var updateOptionResult = function() {
+  optionResult = (<%= @item.option.price_per_oz %>).toFixed(2)
+  currentResult = $('#<%= dom_id(@item.option) %> .option_result h1').text().replace('$', '')
+  currentResult = parseFloat(currentResult)
+  changeOptionResultText(optionResult)
+
+  // Attempting to increment the option total in cents, but currently not working out
+  //
+  // difference = (optionResult - currentResult)
+  // if (difference >= 0) {
+  //   for (var i = currentResult; i <= difference; i+= 0.01) {
+  //     setTimeout(function(x) {
+  //       return function() { changeOptionResultText(x) } }(i), 100*i);
+  //   }
+  // } else {
+  //   for (var i = currentResult; i >= difference; i-= 0.01 ) {
+  //     setTimeout(function(x) {
+  //       return function() { changeOptionResultText(x) } }(i), 100*i);
+  //   }
+  // }
+}
+
+var updateOptionWinner = function() {
+  $('.option_winner').removeClass('option_winner')
+  $('#<%= dom_id(@option_winner) %>').addClass('option_winner')
+  $('#<%= dom_id(@option_winner) %> .option_result h1' ).effect('highlight', {color: '#A4C9A4'}, 500)
+}
