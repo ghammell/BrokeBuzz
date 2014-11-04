@@ -81,7 +81,6 @@ test:
 production:
   <<: *default
   database: BrokeBuzz_production
-  username: BrokeBuzz
   password: <%= ENV['BROKEBUZZ_DATABASE_PASSWORD'] %>
 
 
