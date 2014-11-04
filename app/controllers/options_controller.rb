@@ -6,10 +6,10 @@ class OptionsController < ApplicationController
   end
 
   def destroy
+    determine_option_winner
     @option = Option.find(params[:id])
     session[:options].delete(@option.id)
     @option.destroy
-    determine_option_winner
   end
 
   private
