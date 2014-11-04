@@ -1,11 +1,8 @@
+<%= render 'items/update_option' %>
+
 $('#<%= dom_id(@option) %>').fadeOut( function(){
   $(this).remove()
   updateOptionWidths('.option', 3)
 })
-
-var updateOptionWinner = function() {
-  $('.option_winner').removeClass('option_winner')
-  $('#<%= dom_id(@option_winner) %>').addClass('option_winner')
-}
 
 updateOptionWinner()
