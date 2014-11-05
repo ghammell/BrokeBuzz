@@ -3,9 +3,10 @@ $(document).ready(function(){
 })
 
 var bindNameSearchEvent = function() {
-  $('body').on('keyup', '.name_input', function(){
+  $('body').on('click', '.search_button', function(e){
+    e.preventDefault()
     var url = $(this).parents('.new_item').attr('action') + '/name_search'
-    var search_term = $(this).val()
+    var search_term = $(this).siblings('input').val()
     $.ajax({
       url: url,
       method: 'GET',

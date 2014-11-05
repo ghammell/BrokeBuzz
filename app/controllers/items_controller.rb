@@ -26,7 +26,12 @@ class ItemsController < ApplicationController
     url = URI.parse('http://api.brewerydb.com/v2/beers?name=' + search_term + '&key=' + beer_key )
     req = Net::HTTP::Get.new(url.to_s)
     result = Net::HTTP.start(url.host, url.port) { |http| http.request(req) }
-    p JSON.parse(result.body)['data']
+    data = JSON.parse(result.body)['data']
+    if data
+      p data
+    else
+      p 'NILL DAWG'
+    end
     render nothing: true
   end
 

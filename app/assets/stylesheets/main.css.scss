@@ -11,6 +11,25 @@
     padding: 5px 0px;
     background-color: #A4C9A4;
     display: none;
+
+    .search_button {
+      width: 90%;
+      margin: 0 auto;
+      cursor: pointer;
+      background-color: #2B332B;
+      border: 0;
+      border-top: 1px solid black;
+      transition: all 0.2s;
+      padding: 0;
+      color: white;
+      padding: 2px 0;
+    }
+
+    .search_button:hover {
+      background-color: white;
+      border-top: 1px dashed #A4C9A4;
+      color: black;
+    }
   }
 
   .user_input {
@@ -21,6 +40,9 @@
   form {
     select, input {
       width: 90%;
+      border: none;
+      padding: 0;
+      padding: 2px 0;
     }
 
     .submit {
