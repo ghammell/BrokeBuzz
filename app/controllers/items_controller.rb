@@ -18,6 +18,11 @@ class ItemsController < ApplicationController
     determine_option_winner
   end
 
+  def name_search
+    p 'searching!'
+    render nothing: true
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :category, :volume, :volume_type, :price, :quantity, :abv)
