@@ -12,6 +12,17 @@
     background-color: #A4C9A4;
     display: none;
 
+    .results {
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+      display: none;
+
+      table {
+        margin: 0 auto;
+      }
+    }
+
     .search_button {
       width: 90%;
       margin: 0 auto;
