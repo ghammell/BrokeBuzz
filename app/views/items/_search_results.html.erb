@@ -1,5 +1,6 @@
 <% @results.each do |result_hash| %>
   <div class='search_result'>
-    <%= result_hash[:name] %> <%= result_hash[:abv] %>%
+    <span class='result_name'><%= result_hash[:name] %> </span>
+    <span class='result_abv'> <%= result_hash[:abv] %>% </span>
   </div>
 <% end %>
