@@ -2,7 +2,7 @@
   <%= form_for([@option, Item.new], remote: :true) do |f| %>
     <div class='user_input'>
       <%= f.label :name, 'name' %><br>
-      <%= f.text_field :name, :class => 'name_input', :placeholder => "like 'bud light'", :value => 'bud light' %><br>
+      <%= f.text_field :name, :class => 'name_input', :placeholder => "like 'bud light'", :value => 'budweiser' %><br>
     </div>
 
     <div class='user_input'>
