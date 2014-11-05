@@ -1,3 +1,5 @@
+require 'net/http'
+
 class ItemsController < ApplicationController
   def create
     @option = Option.find(params[:option_id])
@@ -19,7 +21,12 @@ class ItemsController < ApplicationController
   end
 
   def name_search
-    p 'searching!'
+    search_term = params[:search_term]
+    beer_key = '283db9c15918747640eb81252e2aa424'
+    url = URI.parse('http://api.brewerydb.com/v2/beers?name=' + search_term + '&key=' + beer_key )
+    req = Net::HTTP::Get.new(url.to_s)
+    result = Net::HTTP.start(url.host, url.port) { |http| http.request(req) }
+    p JSON.parse(result.body)['data']
     render nothing: true
   end
 
