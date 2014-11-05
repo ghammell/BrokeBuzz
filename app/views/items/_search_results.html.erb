@@ -1,8 +1,5 @@
-<table>
-  <% @results.each do |result_hash| %>
-    <tr class='search_result'>
-      <td> <%= result_hash[:name] %> </td>
-      <td> <%= result_hash[:abv] %>%</td>
-    </tr>
-  <% end %>
-</table>
+<% @results.each do |result_hash| %>
+  <div class='search_result'>
+    <%= result_hash[:name] %> <%= result_hash[:abv] %>%
+  </div>
+<% end %>
