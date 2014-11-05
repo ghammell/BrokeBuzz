@@ -33,6 +33,8 @@ var bindChooseResultEvent = function() {
     var name = $(this).children('.result_name').text()
     var abv = $(this).children('.result_abv').text().replace(' ', '').replace('% abv', '')
     $(this).parents().find('.name_input').val(name).effect('highlight', {color: '#a3aac6'}, 500)
-    $(this).parents().find('.item_abv').val(parseFloat(abv)).effect('highlight', {color: '#a3aac6'}, 500)
+    $(this).parents().find('.item_abv').val(parseFloat(abv)).effect('highlight', {color: '#a3aac6'}, 1000, function(){
+        $(this).parents().find('.results').slideUp()
+    })
   })
 }
