@@ -9,7 +9,7 @@ var bindNameSearchEvent = function() {
     $.ajax({
       url: url,
       method: 'GET',
-      data: search_term
+      data: {search_term: search_term}
     })
     .done(function(){
       console.log('success')
