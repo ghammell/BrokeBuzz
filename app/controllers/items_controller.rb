@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:category, :volume, :volume_type, :price, :quantity, :abv)
+    params.require(:item).permit(:name, :category, :volume, :volume_type, :price, :quantity, :abv)
   end
 
   def determine_option_winner

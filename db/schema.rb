@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20141102043659) do
   enable_extension "plpgsql"
 
   create_table "items", force: true do |t|
+    t.string   "name"
     t.string   "category"
     t.float    "volume"
     t.string   "volume_type"

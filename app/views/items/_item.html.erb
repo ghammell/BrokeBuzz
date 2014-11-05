@@ -3,7 +3,7 @@
     <%= link_to 'x', [@option, @item], method: :delete, remote: :true %>
   </div>
   <div class="info">
-    <span><%= pluralize(@item.quantity, 'bottle') %> of <%= @item.category %></span>
+    <span><%= pluralize(@item.quantity, 'bottle') %> of <%= @item.name %></span>
     <span>for <%= number_to_currency(@item.price) %> </span><br>
     <span>(<%=pluralize(number_with_precision(@item.volume, :precision => 2, :delimiter => ','), @item.volume_type) %> each, </span>
     <span> <%= @item.abv * 100 %>% abv)</span>
