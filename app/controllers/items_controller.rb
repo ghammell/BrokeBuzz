@@ -22,13 +22,20 @@ class ItemsController < ApplicationController
 
   def name_search
     search_term = params[:search_term]
+    if params[:type] == 'beer'
+      beer_search(search_term)
+    end
+    render nothing: true
+  end
+
+  def beer_search(search_term)
     beer_key = '283db9c15918747640eb81252e2aa424'
-    url = URI.parse('http://api.brewerydb.com/v2/beers?name=' + search_term + '&key=' + beer_key )
+    url = URI.parse('http://api.brewerydb.com/v2/search?q=' + search_term + '&type=beer&key=' + beer_key )
     req = Net::HTTP::Get.new(url.to_s)
     result = Net::HTTP.start(url.host, url.port) { |http| http.request(req) }
     data = JSON.parse(result.body)['data']
     if data
-      p data
+      data.each {|beer_hash| p beer_hash['name']}
     else
       p 'NILL DAWG'
     end
