@@ -24,8 +24,9 @@ class ItemsController < ApplicationController
     search_term = params[:search_term]
     if params[:type] == 'beer'
       beer_search(search_term)
+    else
+      render nothing: true
     end
-    render nothing: true
   end
 
   def beer_search(search_term)
@@ -35,11 +36,14 @@ class ItemsController < ApplicationController
     result = Net::HTTP.start(url.host, url.port) { |http| http.request(req) }
     data = JSON.parse(result.body)['data']
     if data
-      data.each {|beer_hash| p beer_hash['name']}
+      @results = data.map do |beer_hash|
+        { name: beer_hash['name'], abv: beer_hash['abv'] }
+      end
     else
+      @results = nil
       p 'NILL DAWG'
     end
-    render nothing: true
+    render :partial => 'search_results'
   end
 
   private
