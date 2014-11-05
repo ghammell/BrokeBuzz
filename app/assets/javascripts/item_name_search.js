@@ -15,7 +15,8 @@ var bindNameSearchEvent = function() {
       data: {search_term: search_term, type: type}
     })
     .done(function(data){
-      searchButton.before(data)
+      searchButton.siblings('.results').empty()
+      searchButton.siblings('.results').append(data)
     })
     .fail(function(){
       console.log('fail')
