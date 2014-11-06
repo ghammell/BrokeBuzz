@@ -1,6 +1,16 @@
-<% @results.each do |result_hash| %>
+<% if @results == [] %>
+
   <div class='search_result'>
-    <span class='result_name'><%= result_hash[:name] %> </span>
-    <span class='result_abv'> <%= result_hash[:abv] %>% abv </span>
+    <span class='no_results_message'>Sorry, but no results match that keyword</span>
   </div>
+
+<% else %>
+
+  <% @results.each do |result_hash| %>
+    <div class='search_result'>
+      <span class='result_name'><%= result_hash[:name] %> </span>
+      <span class='result_abv'> <%= result_hash[:abv] %>% abv </span>
+    </div>
+  <% end %>
+
 <% end %>
