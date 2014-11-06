@@ -30,19 +30,13 @@ class ItemsController < ApplicationController
   end
 
   def beer_search(search_term)
-    beer_key = '283db9c15918747640eb81252e2aa424'
-    url = URI.parse('http://api.brewerydb.com/v2/search?q=' + search_term + '&type=beer&key=' + beer_key )
-    req = Net::HTTP::Get.new(url.to_s)
-    result = Net::HTTP.start(url.host, url.port) { |http| http.request(req) }
-    data = JSON.parse(result.body)['data']
-    if data
-      @results = data.map do |beer_hash|
-        { name: beer_hash['name'], abv: beer_hash['abv'] }
-      end
-    else
-      @results = nil
-      p 'NILL DAWG'
+    brew_db = ItemsHelper::BreweryDB.new
+    beer_results = brew_db.beers_search(search_term) || []
+
+    @results = beer_results.map do |beer_hash|
+      { name: beer_hash['name'], abv: beer_hash['abv'] }
     end
+
     render :partial => 'search_results'
   end
 
