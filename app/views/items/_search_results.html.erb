@@ -8,9 +8,17 @@
 
   <% @results.each do |result_hash| %>
     <div class='search_result'>
+
       <span class='result_name'><%= result_hash[:name] %> </span>
-      <span class='result_abv'> <%= result_hash[:abv] %>% abv </span>
-      <span class='result_price'> $<%= result_hash[:price] %> </span>
+
+      <% if result_hash[:abv] %>
+        <span class='result_abv'> <%= result_hash[:abv] %>% abv </span>
+      <% end %>
+
+      <% if result_hash[:price] %>
+        <span class='result_price'> $<%= result_hash[:price] %> </span>
+      <% end %>
+
     </div>
   <% end %>
 
