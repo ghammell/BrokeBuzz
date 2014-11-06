@@ -25,6 +25,10 @@
         background-color: white;
         transition: all 0.2s;
 
+      }
+
+      .no_results {
+        padding: 5px;
         .no_results_message {
           color: #c4a2a2;
         }
@@ -94,6 +98,11 @@
     width: 20%;
     border: none;
     margin: 5px auto;
+  }
+
+  #add_option_button:hover {
+    background-color: white;
+    cursor: pointer;
   }
 
   #options_div{
