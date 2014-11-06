@@ -9,7 +9,7 @@ var bindNameSearchEvent = function() {
     var searchButton = $(this)
     var url = $(this).parents('.new_item').attr('action') + '/name_search'
     var search_term = $(this).siblings('input').val()
-    var type = $(this).parents().find('#item_category').val()
+    var type = $(this).parents('.new_item_form_div').find('#item_category').val()
     $.ajax({
       url: url,
       method: 'GET',
