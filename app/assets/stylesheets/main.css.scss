@@ -24,6 +24,10 @@
         color: #a3aac6;
         background-color: white;
         transition: all 0.2s;
+
+        .no_results_message {
+          color: #c4a2a2;
+        }
       }
 
       .search_result:hover {
