@@ -19,7 +19,7 @@
       display: none;
       background-color: white;
 
-      .search_result{
+      .search_result {
         padding: 5px;
         color: #a3aac6;
         background-color: white;
@@ -34,6 +34,21 @@
         background-color: #a3aac6;
         color: white;
         cursor: pointer;
+      }
+
+      .cancel_search {
+        padding: 5px;
+        color: white;
+        background-color: #c4a2a2;
+        transition: all 0.2s;
+        border-top: 1px solid #c4a2a2;
+      }
+
+      .cancel_search:hover {
+        color: #c4a2a2;
+        background-color: white;
+        cursor: pointer;
+        border-top: 1px dashed #c4a2a2;
       }
     }
 

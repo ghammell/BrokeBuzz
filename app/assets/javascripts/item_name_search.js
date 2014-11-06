@@ -1,6 +1,7 @@
 $(document).ready(function(){
   bindNameSearchEvent()
   bindChooseResultEvent()
+  bindCancelSearchEvent()
 })
 
 var bindNameSearchEvent = function() {
@@ -36,5 +37,11 @@ var bindChooseResultEvent = function() {
     $(this).parents('.new_item_form_div').find('.item_abv').val(parseFloat(abv)).effect('highlight', {color: '#a3aac6'}, 1000, function(){
         $(this).parents('.new_item_form_div').find('.results').slideUp()
     })
+  })
+}
+
+var bindCancelSearchEvent = function() {
+  $('body').on('click', '.cancel_search', function() {
+    $(this).parent().slideUp()
   })
 }
