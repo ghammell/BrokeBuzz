@@ -2,6 +2,7 @@ $(document).ready(function(){
   bindNameSearchEvent()
   bindChooseResultEvent()
   bindCancelSearchEvent()
+  bindHideSearchButton()
 })
 
 var bindNameSearchEvent = function() {
@@ -58,3 +59,14 @@ var bindCancelSearchEvent = function() {
     $(this).parent().slideUp()
   })
 }
+
+var bindHideSearchButton = function() {
+  $('body').on('change', '.item_category_div select', function(){
+    if ($(this).val() === 'liquor') {
+      $(this).parents().find('.search_button').fadeOut()
+    } else {
+      $(this).parents().find('.search_button').slideDown()
+    }
+  })
+}
+
