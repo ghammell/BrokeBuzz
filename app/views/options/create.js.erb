@@ -15,7 +15,10 @@ var updateOptionWidths = function(selector, limit) {
 }
 
 updateOptionWidths('.option', 3)
-$('#<%= dom_id(@option) %>').fadeIn()
+
+setTimeout( function(){
+  $('#<%= dom_id(@option) %>').fadeIn()
+}, 100)
 
 updateOptionNumber()
 updateOptionWinner()
