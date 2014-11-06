@@ -21,9 +21,11 @@ class ItemsController < ApplicationController
   end
 
   def name_search
-    search_term = params[:search_term]
+    search_term = params[:search_term].gsub(" ", "+")
     if params[:type] == 'beer'
       beer_search(search_term)
+    elsif params[:type] == 'wine'
+      wine_search(search_term)
     else
       render nothing: true
     end
@@ -37,6 +39,15 @@ class ItemsController < ApplicationController
       { name: beer_hash['name'], abv: beer_hash['abv'] }
     end
 
+    render :partial => 'search_results'
+  end
+
+  def wine_search(search_term)
+    wine_db = ItemsHelper::WineDB.new
+    wine_results = wine_db.wines_search(search_term) || []
+    @results = wine_results.map do |wine_hash|
+      { name: wine_hash['Name'], abv: wine_hash['abv'], price: wine_hash['PriceRetail'] }
+    end
     render :partial => 'search_results'
   end
 
