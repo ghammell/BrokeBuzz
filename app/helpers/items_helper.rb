@@ -24,7 +24,6 @@ module ItemsHelper
     def wines_search(search_term)
       wine_results = self.class.get('/catalog?search=' + search_term + '&apikey=' + @wine_key)
       parsed_results = JSON.parse(wine_results.body)['Products']['List']
-      p parsed_results
     end
   end
 end

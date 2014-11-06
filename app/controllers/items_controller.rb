@@ -45,9 +45,11 @@ class ItemsController < ApplicationController
   def wine_search(search_term)
     wine_db = ItemsHelper::WineDB.new
     wine_results = wine_db.wines_search(search_term) || []
+
     @results = wine_results.map do |wine_hash|
       { name: wine_hash['Name'], abv: wine_hash['abv'], price: wine_hash['PriceRetail'] }
     end
+
     render :partial => 'search_results'
   end
 
