@@ -33,7 +33,10 @@ var bindChooseResultEvent = function() {
   $('body').on('click', '.search_result', function(){
     var name = $(this).children('.result_name').text()
     var abv = $(this).children('.result_abv').text().replace(' ', '').replace('% abv', '')
-    $(this).parents('.new_item_form_div').find('.name_input').val(name).effect('highlight', {color: '#a3aac6'}, 500)
+    var price = $(this).children('.result_price').text().replace('$','')
+    console.log(price)
+    $(this).parents('.new_item_form_div').find('.name_input').val(name).effect('highlight', {color: '#a3aac6'}, 1000)
+    $(this).parents('.new_item_form_div').find('.item_price').val(parseFloat(price)).effect('highlight', {color: '#a3aac6'}, 1000)
     $(this).parents('.new_item_form_div').find('.item_abv').val(parseFloat(abv)).effect('highlight', {color: '#a3aac6'}, 1000, function(){
         $(this).parents('.new_item_form_div').find('.results').slideUp()
     })
