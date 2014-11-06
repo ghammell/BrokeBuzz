@@ -31,6 +31,8 @@ var bindNameSearchEvent = function() {
 
 var bindChooseResultEvent = function() {
   $('body').on('click', '.search_result', function(){
+    $(this).closest('form').find("input").val("")
+
     var name = $(this).children('.result_name').text()
     var abv = $(this).children('.result_abv').text().replace(' ', '').replace('% abv', '')
     var price = $(this).children('.result_price').text().replace('$','')
