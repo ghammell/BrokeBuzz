@@ -1,7 +1,6 @@
-require 'net/http'
-
 class ItemsController < ApplicationController
   def create
+    p params
     @option = Option.find(params[:option_id])
     @item = @option.items.new(item_params)
     unless @item.save

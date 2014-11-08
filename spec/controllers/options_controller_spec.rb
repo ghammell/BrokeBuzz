@@ -1,7 +1,6 @@
 require 'spec_helper'
 require 'rails_helper'
 
-
 describe OptionsController do
   before(:each) do
     Option.delete_all
@@ -28,11 +27,11 @@ describe OptionsController do
   describe 'DELETE #destroy' do
     it 'successfully deletes a given option' do
       assert_raises(ActiveRecord::RecordNotFound) do
-        option_id = Option.create.id
-        session[:options] << option_id
-        delete :destroy, {:id => option_id, :format => 'js'}
+        option = Option.create
+        session[:options] << option.id
+        delete :destroy, {:id => option.id, :format => 'js'}
 
-        Option.find(option_id)
+        Option.find(option.id)
       end
     end
 
