@@ -1,5 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
+config.serve_static_assets = true
 
 # Pick the frameworks you want:
 require "active_model/railtie"
