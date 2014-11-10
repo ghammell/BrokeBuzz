@@ -1,5 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
+config.assets.initialize_on_precompile = false
+
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_record/railtie"
