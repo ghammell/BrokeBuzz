@@ -8,7 +8,7 @@ www.BrokeBuzz.com
   <li>rails conventions like restful routes, div_for, and form helpers</li>
   <li>before save / after save functionality in the Items model</li>
   <li>continuous integration and deployment to Heroku through circle CI</li>
-  <li>background animation on scroll</li>
+  <li>randomly generated, dynamic background</li>
   <li>single page applicaton</li>
   <li>rspec testing</li>
 </ul>
