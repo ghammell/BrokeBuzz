@@ -1,6 +1,7 @@
 class OptionsController < ApplicationController
   def create
     @option = Option.create
+    @item = Item.new
     session[:options] << @option.id
     determine_option_winner
   end
