@@ -6,7 +6,7 @@
     <span><%= pluralize(@item.quantity, 'bottle') %> of <%= @item.name %></span>
     <span>for <%= number_to_currency(@item.price) %> </span><br>
     <span>(<%=pluralize(number_with_precision(@item.volume, :precision => 2, :delimiter => ','), @item.volume_type) %> each, </span>
-    <span> <%= @item.abv * 100 %>% abv)</span>
+    <span> <%= number_with_precision(@item.abv * 100, :precision => 2) %>% abv)</span>
   </div>
   <div class="result">
     <h1><%= number_to_currency(@item.price_per_oz) %></h1>
