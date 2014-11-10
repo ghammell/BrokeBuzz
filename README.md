@@ -10,4 +10,5 @@ www.BrokeBuzz.com
   <li>continuous integration and deployment to Heroku through circle CI</li>
   <li>background animation on scroll</li>
   <li>single page applicaton</li>
+  <li>rspec testing</li>
 </ul>
