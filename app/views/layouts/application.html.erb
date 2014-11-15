@@ -17,6 +17,19 @@
   <%= render :partial => 'layouts/beer_background' %>
 
   <div id='main'>
+    <div id='instructions'>
+      <span>Compare booze options to see which will get you buzzed most efficiently, based off of the price per ounce of <b>pure</b> alcohol.
+      </span>
+      <br><br>
+      <span><b>How it works:</b></span>
+      <br>
+      <span>
+        1) Create options &nbsp;
+        2) Add items to each option  &nbsp;
+        3) For each item, select Beer, Wine, or Liquor, input a name (or search), add the quantity, volume, abv, and price  &nbsp;
+        4) Make your pick!
+      </span>
+    </div>
     <%= button_to 'Get Started!', options_path, :id => 'add_option_button', :remote => true %>
     <div id='options_div'>
     </div>
