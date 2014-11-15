@@ -9,6 +9,8 @@
 </head>
 <body>
 
+<%= yield %>
+
   <header id="header">
     <h1>BrokeBuzz</h1>
     <!-- <h2>get buzzed on the cheap</h2> -->
@@ -18,7 +20,8 @@
 
   <div id='main'>
     <div id='instructions'>
-      <span>Compare booze options to see which will get you buzzed most efficiently, based off of the price per ounce of <b>pure</b> alcohol.
+      <span>
+        Compare booze options to see which will get you buzzed most efficiently, based off of the price per ounce of <b>pure</b> alcohol.
       </span>
       <br><br>
       <span><b>How it works:</b></span>
@@ -35,7 +38,6 @@
     </div>
   </div>
 
-<%= yield %>
 
 </body>
 </html>
