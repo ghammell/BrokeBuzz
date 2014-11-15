@@ -32,11 +32,11 @@
         color: #a3aac6;
         background-color: white;
         transition: all 0.2s;
-
       }
 
       .no_results {
         padding: 5px;
+
         .no_results_message {
           color: #c4a2a2;
         }
@@ -106,6 +106,7 @@
     width: 20%;
     border: none;
     margin: 5px auto;
+    transition: all 0.2s;
   }
 
   #add_option_button:hover {
@@ -230,7 +231,6 @@
           border-right: 2px solid white;
           border-bottom: 2px solid white;
           box-shadow: inset 1px 1px 10px black;
-
 
           h1 {
             margin: 0;
